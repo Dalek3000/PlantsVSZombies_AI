@@ -386,10 +386,10 @@ def setup(on_game_start: callable, on_program_end: callable) -> HotkeyListener:
     Gibt den HotkeyListener zurück (zum späteren Stoppen).
     """
     run_startup_dialog()
+    if not runtime.is_calibrated():
+            run_calibration_assistant()
 
     def _on_start():
-        if not runtime.is_calibrated():
-            run_calibration_assistant()
         state_manager.set(GameState.RUNNING)
         on_game_start()
 

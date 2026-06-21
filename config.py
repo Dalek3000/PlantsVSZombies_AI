@@ -176,6 +176,13 @@ PLANT_DATABASE: dict[str, PlantConfig] = {
         valid_field_types=[FieldType.ROOF],   # Nur auf Dach!
         template_path="templates/plants/flowerspot.png",
     ),
+    "kernel": PlantConfig(
+        name="Kernel-Pult",
+        plant_id=11,
+        sun_cost=100,
+        valid_field_types=[FieldType.GRASS, FieldType.ROOF],
+        template_path="templates/plants/kernel.png",
+    ),
 }
 
 # Aktive Pflanzen für die aktuelle Sitzung (wird von user_interaction.py gesetzt)
